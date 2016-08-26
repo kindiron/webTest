@@ -15,3 +15,23 @@
 		}
 	});
 })(jQuery);
+
+
+/*
+		//Ajax 통신시에 로그인확인
+		if (isAjaxRequest(req)) {
+			try {
+				chain.doFilter(request, response);
+			} catch (AccessDeniedException e) {
+				res.sendError(HttpServletResponse.SC_FORBIDDEN);
+			} catch (AuthenticationException e) {
+				res.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+			}
+		}else{
+			chain.doFilter(request, response);
+		}
+
+	private boolean isAjaxRequest(HttpServletRequest req) {
+		return req.getHeader("AJAX") != null && req.getHeader("AJAX").equals(Boolean.TRUE.toString());
+	}
+*/
