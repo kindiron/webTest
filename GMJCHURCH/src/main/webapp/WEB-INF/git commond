@@ -1,0 +1,9 @@
+git add *
+git commit -m ''
+git push
+
+
+
+git status
+git add [filen_path]
+git log
