@@ -2,6 +2,11 @@
 	$.ajaxSetup({
 			beforeSend: function(xhr) {
 			xhr.setRequestHeader("AJAX", true);
+			if(typeof tid != "undefined"){
+				clearInterval(tid);
+				cnt = orgCnt;
+				counter_init();
+			}
 		},
 		error: function(xhr, status, err) {
 			if (xhr.status == 401) {
@@ -50,7 +55,10 @@ function counter_init() {
 function counter_reset() {
 	clearInterval(tid);
 	cnt = parseInt(300);
-	counter_init();
+	$.get("/login.do"). done(function(data) {
+		clearInterval(tid);
+		counter_init();
+	});
 	//ajax 처리해줘야 함
 }
 
